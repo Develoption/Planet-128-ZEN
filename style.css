@@ -131,8 +131,12 @@ nav a:nth-child(7) {
     padding: 0 50px;
 }
 
+.bord {
+    gap: 50px;
+}
+
 h1 {
-    margin:  50px 0 0 0;
+    margin: 50px 0 0 0;
     max-width: 700px;
     font-size: 60px;
     color: #47ef47;
@@ -155,24 +159,26 @@ h1 {
 
 .element {
     display: flex;
-    margin: 0;
+    margin: auto;
     opacity: 0;
+    gap: 50px;
     animation: slideIn 1s forwards;
+}
+
+.element .text {
+    margin: auto;
 }
 
 .text {
     font-size: 20px;
     color: white;
-    display: inline;
-    width: 480px;
-    margin-right: auto;
 }
 
 .rocket-img {
-    width: 470px;
-    height: 400px;
-    display: block;
-    margin: 0;
+    margin: auto;
+    max-width: 300px;
+    height: max-content;
+    width: 100%;
     animation: bounce 1s infinite alternate;
 }
 
@@ -181,7 +187,14 @@ h1 {
     height: 50px;
     opacity: 0;
     animation: fadeIn 1s forwards 0.5s;
-    margin: 0 0 50px 0;
+}
+
+.object b {
+    margin: 20px 0 0 0;
+}
+
+.bord .more {
+    margin: 50px 0 50px 0;
 }
 
 @keyframes fadeIn {
@@ -287,6 +300,49 @@ b {
     width: 800px;
     border: 2px solid #77aadd;
     border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.popup img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #fff;
+}
+
+.hidden {
+    display: none;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    color: red;
 }
 
 .cards {
@@ -313,10 +369,6 @@ b {
     transform: scale(1.05);
 }
 
-.extra {
-    display: none;
-}
-
 .text-p,
 .card-h2 {
     color: white;
@@ -324,6 +376,10 @@ b {
     background-color: #0b0c21;
     margin: 20px;
     margin-bottom: 25px;
+}
+
+.extra {
+    display: none;
 }
 
 .card-h2 {
@@ -346,6 +402,13 @@ b {
     border: none;
     padding: 10px;
     font-size: 20px;
+}
+
+iframe {
+    border: 3px solid #47ef47;
+    border-radius: 20px;
+    width: 800px;
+    height: 450px;
 }
 
 .modal-1 {
@@ -512,9 +575,43 @@ footer {
     border-top: 2px solid #77aadd;
 }
 
+@media (min-width: 1025px) {
+    .rocket-img.mob {
+        display: none;
+    }
+    .element {
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 1024px) {
+    .rocket-img.web {
+        display: none;
+    }
+    .bord {
+        text-align: center;
+    }
+    .element {
+        margin: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
 @media (min-width: 768px) and (max-width: 1024px) {
     header {
         flex-wrap: wrap;
+    }
+    nav:nth-child(1) {
+        display: flex;
+        margin: auto;
+    }
+    nav:nth-child(2) {
+        margin: auto;
+        width: 100%;
+        justify-content: space-between;
     }
     .link {
         margin: 8px;
@@ -525,9 +622,6 @@ footer {
     .border {
         margin: 40px;
         padding: 40px;
-    }
-    .rocket-img {
-        display: none;
     }
     .nav-image {
         width: 750px;
@@ -541,6 +635,10 @@ footer {
     ul {
         flex-wrap: wrap;
     }
+    iframe {
+        width: 720px;
+        height: 405px;
+    }
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
@@ -551,6 +649,10 @@ footer {
     .nav-image-1,
     .map {
         width: 560px;
+    }
+    iframe {
+        width: 512px;
+        height: 288px;
     }
 }
 
@@ -566,9 +668,13 @@ footer {
     .search {
         width: 320px;
     }
+    iframe {
+        width: 432px;
+        height: 243px;
+    }
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
+@media (min-width: 0px) and (max-width: 480px) {
     nav,
     .nav-image,
     .nav-image-1,
@@ -578,9 +684,13 @@ footer {
     .search {
         width: 150px;
     }
+    iframe {
+        width: 304px;
+        height: 171px;
+    }
 }
 
-@media (min-width: 320px) and (max-width: 768px) {
+@media (min-width: 0px) and (max-width: 768px) {
     header {
         flex-direction: column;
         background: none;
@@ -629,9 +739,6 @@ footer {
         max-width: 700px;
         font-size: 15px;
         margin: 30px 0;
-    }
-    .rocket-img {
-        display: none;
     }
     .more {
         max-width: 200px;
