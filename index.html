@@ -11,23 +11,23 @@
 
     <header id="main">
         <nav>
-        <a href="index.html" class="logo">
-            <img src="PNG/Planet-128-ZEN.png" class="logo-img" alt="Planet-128-ZEN">
-            <p class="text-header">КОСМОС!</p>
-        </a>
+            <a href="index.html" class="logo">
+                <img src="PNG/Planet-128-ZEN.png" class="logo-img" alt="Planet-128-ZEN">
+                <p class="text-header">КОСМОС!</p>
+            </a>
         </nav>
         <nav>
-            <a href="#main" class="main-link">Главная</a>
+            <a href="index.html" class="main-link">Главная</a>
             <a href="#more" class="link">О сайте</a>
             <a href="#plan" class="link">Планеты</a>
-            <a href="#map-" class="link">Карты</a>
+            <a href="#maps" class="link">Карты</a>
             <a href="#cont" class="link">Контенты</a>
             <a href="#info" class="link">Информация</a>
         </nav>
     </header>
 
     <section id="more">
-        <div class="border">
+        <div class="border bord">
             <h1>
                 ДОБРО ПОЖАЛОВАТЬ
                 <br>
@@ -35,10 +35,11 @@
                 <span class="name">Planet-128-ZEN</span>
             </h1>
             <div class="element">
+                <img src="PNG/rocket.png" class="rocket-img mob" alt="rocket">
                 <p class="text">
-                    Здесь вы сможете узнать о потрясающих особенностях нашей экосистемы и разнообразии местной флоры и фауны. Исследуйте климатические условия и геологические формирования, которые делают эту планету уникальной. Мы расскажем о текущих научных проектах, направленных на изучение ее потенциала. В разделе технологий вы найдете информацию о достижениях, необходимых для колонизации и исследования. Если вас интересует культура местных цивилизаций, вы сможете узнать о их языках и традициях. Также мы предлагаем информацию о возможностях космического туризма для тех, кто хочет посетить эту удивительную планету. Присоединяйтесь к нам и станьте частью захватывающего приключения!
+                    Здесь вы сможете узнать о потрясающих особенностях нашей экосистемы и разнообразии местной флоры и фауны. Исследуйте климатические условия и геологические формирования, которые делают эту планету уникальной. Мы расскажем о текущих научных проектах, направленных на изучение ее потенциала. В разделе технологий вы найдете информацию о достижениях, необходимых для колонизации и исследования. Присоединяйтесь к нам и станьте частью захватывающего приключения!
                 </p>
-                <img src="PNG/rocket.png" class="rocket-img" alt="rocket">
+                <img src="PNG/rocket.png" class="rocket-img web" alt="rocket">
             </div>
             <button class="more btn" onclick="location.href='#info'">Узнать больше</a>
         </div>
@@ -93,12 +94,17 @@
         </p>
     </section>
 
-    <section class="section" id="map-">
+    <section class="section" id="maps">
         <div class="block">
             <h2>Интерактивные карты</h2>
         </div>
-        <img src="PNG/map.png" class="map" alt="map">
+        <img src="PNG/map.png" class="map" alt="map" id="mapImage">
     </section>
+
+    <div id="popup" class="popup hidden">
+        <button class="close-btn">&times;</button>
+        <img src="PNG/map.png" alt="map enlarged">
+    </div>
 
     <section class="section" id="work">
         <div class="block">
@@ -165,7 +171,14 @@
         </p>
     </section>
 
-    <section id="cont">
+    <section class="section">
+        <div class="block">
+            <h2>Видео</h2>
+        </div>
+        <iframe src="https://www.youtube.com/embed/e4eUUkk4B3E" title="Planet-128-ZEN" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+
+    <section class="object" id="cont">
         <div class="border">
             <h1>Поиск объекты</h1>
             <div class="search-box">
