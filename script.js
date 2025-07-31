@@ -1,12 +1,24 @@
-document.querySelector('.default').addEventListener('click', function () {
+document.addEventListener('DOMContentLoaded', function () {
+    const button = document.querySelector('.default');
     const extraCards = document.querySelectorAll('.cards .extra');
-    const button = this;
 
-    extraCards.forEach(card => {
-        card.style.display = (card.style.display === 'none' || card.style.display === '') ? 'block' : 'none';
+    button.addEventListener('click', function () {
+        extraCards.forEach(card => {
+            const currentDisplay = getComputedStyle(card).display;
+
+            if (currentDisplay === 'none') {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        if (button.textContent === 'Показать') {
+            button.textContent = 'Скрыть';
+        } else {
+            button.textContent = 'Показать';
+        }
     });
-
-    button.textContent = button.textContent === 'Показать' ? 'Скрыть' : 'Показать';
 });
 
 function search() {
