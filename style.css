@@ -313,6 +313,10 @@ b {
     transform: scale(1.05);
 }
 
+.extra {
+    display: none;
+}
+
 .text-p,
 .card-h2 {
     color: white;
