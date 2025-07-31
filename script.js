@@ -1,3 +1,14 @@
+document.querySelector('.default').addEventListener('click', function () {
+    const extraCards = document.querySelectorAll('.cards .extra');
+    const button = this;
+
+    extraCards.forEach(card => {
+        card.style.display = (card.style.display === 'none' || card.style.display === '') ? 'block' : 'none';
+    });
+
+    button.textContent = button.textContent === 'Показать' ? 'Скрыть' : 'Показать';
+});
+
 function search() {
     const input = document.getElementById("search");
     const value = input.value.trim();
