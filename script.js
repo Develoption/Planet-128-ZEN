@@ -1,24 +1,31 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const button = document.querySelector('.default');
+const popup = document.getElementById("popup");
+const mapImage = document.getElementById("mapImage");
+
+mapImage.addEventListener("click", () => {
+    popup.classList.remove("hidden");
+});
+
+popup.addEventListener("click", (event) => {
+    if (event.target === popup) {
+        popup.classList.add("hidden");
+    }
+});
+
+const closeBtn = document.querySelector(".close-btn");
+
+closeBtn.addEventListener("click", () => {
+    popup.classList.add("hidden");
+});
+
+document.querySelector('.default').addEventListener('click', function () {
     const extraCards = document.querySelectorAll('.cards .extra');
+    const button = this;
 
-    button.addEventListener('click', function () {
-        extraCards.forEach(card => {
-            const currentDisplay = getComputedStyle(card).display;
-
-            if (currentDisplay === 'none') {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
-        });
-
-        if (button.textContent === 'Показать') {
-            button.textContent = 'Скрыть';
-        } else {
-            button.textContent = 'Показать';
-        }
+    extraCards.forEach(card => {
+        card.style.display = (card.style.display === 'none' || card.style.display === '') ? 'block' : 'none';
     });
+
+    button.textContent = button.textContent === 'Показать' ? 'Скрыть' : 'Показать';
 });
 
 function search() {
